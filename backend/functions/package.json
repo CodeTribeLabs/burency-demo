@@ -1,0 +1,41 @@
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run lint && tsc && firebase emulators:start",
+    "serveLoad": "npm run lint && tsc && firebase emulators:start --import ./emulators_data",
+    "serveData": "npm run lint && tsc && firebase emulators:start --import ./emulators_data --export-on-exit",
+    "serveFunctions": "npm run lint && tsc && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "exportData": "firebase emulators:export ./emulators_data",
+    "importData": "firebase emulators:start --import ./emulators_data",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "algoliasearch": "^4.14.3",
+    "bcrypt": "^5.1.0",
+    "firebase-admin": "^11.4.1",
+    "firebase-functions": "^4.2.1",
+    "geofire-common": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}

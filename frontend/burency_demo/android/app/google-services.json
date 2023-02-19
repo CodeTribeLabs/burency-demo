@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "147865310220",
+    "project_id": "burencydemo",
+    "storage_bucket": "burencydemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147865310220:android:3d01c842e9f1ff31edca29",
+        "android_client_info": {
+          "package_name": "com.example.burency_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147865310220-t1mm40fdkqmeucbo1nq0j9c2hgh6ql9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2yXYQMO5ynlFqRskAtm7s__khKHMoI0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147865310220-t1mm40fdkqmeucbo1nq0j9c2hgh6ql9v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "147865310220-tek3iut8ult1f0g4f351iek989tj5l61.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.burencyDemo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
