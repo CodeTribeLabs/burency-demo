@@ -80,7 +80,7 @@ A simple contact management web app developed using Flutter Web as frontend and 
   }
   ```
 - **Response:**
-  - Succces:
+  - Success:
   ```
   {
     "id": "{Contact Document Id}",
@@ -121,7 +121,7 @@ A simple contact management web app developed using Flutter Web as frontend and 
   }
   ```
 - **Response:**
-  - Succces:
+  - Success:
   ```
   {}
   ```
@@ -140,7 +140,7 @@ A simple contact management web app developed using Flutter Web as frontend and 
   }
   ```
 - **Response:**
-  - Succces:
+  - Success:
   ```
   {}
   ```
@@ -165,7 +165,7 @@ A simple contact management web app developed using Flutter Web as frontend and 
   ```
   > **_NOTE: All three parameters: latitude, longitude and radiusInMeters must be provided to trigger geo-location search_**
 - **Response:**
-  - Succces:
+  - Success:
   ```
   {
     "hits": [
@@ -245,7 +245,7 @@ A simple contact management web app developed using Flutter Web as frontend and 
   ```
   > **_NOTE: radiusInMeters will be centered on the caller's current geo location using IP Address_**
 - **Response:**
-  - Succces: Same as **SEARCH CONTACT**
+  - Success: Same as **SEARCH CONTACT**
   - Failed: See **Error Response**
 
 #### SEARCH HISTORY (Contact Update Logs):
@@ -264,7 +264,7 @@ A simple contact management web app developed using Flutter Web as frontend and 
   }
   ```
 - **Response:**
-  - Succces:
+  - Success:
   ```
   [
     {
