@@ -17,6 +17,68 @@ A simple contact management web app developed using Flutter Web as frontend and 
 - Organized and grouped functions into multiple files
 - Integrated with Algolia for real-time and geo location search
 
+### Design Architecture:
+
+#### Database:
+
+- NoSQL database using Firestore, this was chosen for simplicity and to have a server-less architecture
+- Each record is a shallow document which is basically a key/value pair where the value is a JSON object
+- The entire system is only consists of three collections:
+  - contacts (contains all the contacts)
+  - users (contains all the token credentials for the users)
+  - history (contains all update logs for any modification done on the contacts)
+
+#### API:
+
+- The backend system is server-less and implemented solely using Firebase Cloud Functions
+- It was written in TypeScript and utilized the Firebase Admin SDK to connect to Firestore Authentication and Firestore Database
+- [Algolia](https://www.algolia.com/) is a third-party provider and was used for providing real-time and AI-powered search and discovery experience
+- Each API end point is a separate cloud function residing it its own file.
+- The cloud functions are organized into sub-folders which is as follows:
+  - Entry point:
+  ```
+  index.ts
+  ```
+  - All end points related to contacts:
+  ```
+  ./api/contact
+  ```
+  - All end points related to users:
+  ```
+  ./api/user
+  ```
+  - All end points related to history:
+  ```
+  ./api/history
+  ```
+- Each end point sub-folder is segregated according to the event that triggers them:
+  - DB Triggers (invoked by Firestore database events):
+  ```
+  ./api/{sub-folder}/_db.ts
+  ```
+  - HTTP Triggers (invoked by REST requests):
+  ```
+  ./api/{sub-folder}/_http.ts
+  ```
+  - Callable Triggers (invoked by frontend app using Callable Function):
+  ```
+  ./api/{sub-folder}/_call.ts
+  ```
+- Each end point is prefixed by a two-character code ht{target}-{function}
+  - To add a contact, the HTTP end point route will be:
+  ```
+  htContact-add
+  ```
+  - To search a contact, the HTTP end point route will be:
+  ```
+  htHistory-search
+  ```
+  - To edit a contact using the frontend app through Firebase Callable:
+  ```
+  caContact-edit
+  ```
+- The DB Triggers are only called in response to database events. For example, whenever a new contact is added, updated or deleted, it also logs an entry on the history collection. Then it triggers an external call to Algolia to update its own copy of the contacts.
+
 ### REST API Calls
 
 #### REGISTER:
@@ -309,7 +371,8 @@ Live Demo: [https://burencydemo.web.app/](https://burencydemo.web.app/)
 
 **Features:**
 
-- Used Flutter v3.7.0 and Material v3.0
+- Used Flutter v3.7.0 and Material v3.0. This is my platform of choice to have a single codebase.
+- The frontend in not only available for web deployment. It can also be deployed to Android, iOS, Mac, Windows and Linux devices.
 - State management using GetX
 - Used infinite scroll with lazy loading instead of pagination
 - Used RegEx validators and formatters on text field inputs to sanitize data
