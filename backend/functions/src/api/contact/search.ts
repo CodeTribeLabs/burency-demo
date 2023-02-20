@@ -72,7 +72,7 @@ export async function searchContact(uid:string, data: any) {
 
     console.log(`>>> [${uid}] RESP: ${resp}`);
 
-    return httpOk(resp);
+    return httpOk(resp.hits);
   } catch (error) {
     console.log('>>> REQUEST ERROR : ', error);
     return httpError(error);

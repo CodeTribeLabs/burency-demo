@@ -47,14 +47,18 @@ export async function addContact(uid:string, data: any) {
       timestamp: Timestamp.now().toDate(),
     };
 
-    const resp = await admin.firestore()
+    const ref = admin.firestore()
       .collection(DbPaths.CONTACTS)
-      .doc()
-      .set(newContact);
-    
-    console.log(`>>> [${uid}] RESP: ${resp}`, newContact);
+      .doc();
 
-    return httpOk(newContact);
+    await ref.set(newContact);
+    
+    console.log(`>>> [${uid}] RESP: ${ref}`, newContact);
+
+    return httpOk({
+      id: ref.id,
+      ...newContact,
+    });
   } catch (error) {
     console.log('>>> REQUEST ERROR : ', error);
     return httpError(error);
