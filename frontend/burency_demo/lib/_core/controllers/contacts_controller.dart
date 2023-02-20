@@ -70,7 +70,7 @@ class ContactsController extends GetxController {
     );
 
     if (resp['status'] == HttpResponseCode.ok) {
-      final records = List.from(resp['data']['hits'])
+      final records = List.from(resp['data'])
           .map((data) => ContactModel.from(data))
           .toList();
 

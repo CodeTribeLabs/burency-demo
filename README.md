@@ -313,3 +313,4 @@ Live Demo: [https://burencydemo.web.app/](https://burencydemo.web.app/)
 - State management using GetX
 - Used infinite scroll with lazy loading instead of pagination
 - Used RegEx validators and formatters on text field inputs to sanitize data
+- Touch gesture to scroll up and down the list on browser (like mobile device)
