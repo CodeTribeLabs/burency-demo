@@ -1,7 +1,7 @@
 # Burency Demo
 
-![Login Screen](https://github.com/CodeTribeLabs/burency-demo/login-screen.png "Login Screen")
-![Home Screen](https://github.com/CodeTribeLabs/burency-demo/home-screen.png "Home Screen")
+![Login Screen](https://github.com/CodeTribeLabs/burency-demo/blob/main/login-screen.png "Login Screen")
+![Home Screen](https://github.com/CodeTribeLabs/burency-demo/blob/main/home-screen.png "Home Screen")
 
 A simple contact management web app developed using Flutter Web as frontend and Firebase as backend.
 
